@@ -23,7 +23,7 @@ except ImportError:
 
 setup(
     name='taskwarrior-timecrimes',
-    version='0.1',
+    version='0.1.1',
     url='https://github.com/coddingtonbear/taskwarrior-timecrimes',
     description=(
         "Travel back in time so you can undo your duplicate tasks' creation."
@@ -34,6 +34,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
+    install_requires=requirements,
     packages=find_packages(),
     entry_points={
         'console_scripts': [
