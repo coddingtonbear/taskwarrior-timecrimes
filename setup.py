@@ -37,7 +37,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'taskwarrior_timecrimes = taskwarrior_timecrimes.cmdline:main'
+            'taskwarrior_timecrimes = taskwarrior_timecrimes.cmdline:cmdline'
         ],
     },
 )
