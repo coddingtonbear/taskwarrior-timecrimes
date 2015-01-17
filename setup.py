@@ -1,5 +1,6 @@
 import os
 from setuptools import setup, find_packages
+import uuid
 
 
 requirements_path = os.path.join(
@@ -9,7 +10,10 @@ requirements_path = os.path.join(
 try:
     from pip.req import parse_requirements
     requirements = [
-        str(req.req) for req in parse_requirements(requirements_path)
+        str(req.req) for req in parse_requirements(
+            requirements_path,
+            session=uuid.uuid1()
+        )
     ]
 except ImportError:
     requirements = []
@@ -23,7 +27,7 @@ except ImportError:
 
 setup(
     name='taskwarrior-timecrimes',
-    version='0.1.1',
+    version='0.1.2',
     url='https://github.com/coddingtonbear/taskwarrior-timecrimes',
     description=(
         "Travel back in time so you can undo your duplicate tasks' creation."
